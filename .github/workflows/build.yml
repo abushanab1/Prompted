@@ -1,8 +1,9 @@
-name: Build React Extension
+name: Build and Upload Chrome Extension
 
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -19,5 +20,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
+      - name: Build the app
         run: npm run build
+
+      - name: Upload build folder
+        uses: actions/upload-artifact@v3
+        with:
+          name: prompted-build
+          path: build/
