@@ -24,7 +24,7 @@ jobs:
         run: npm run build
 
       - name: Upload build folder
-        uses: actions/upload-artifact@af5386e53d7bb8e09cfc76075a089f7f7f8b9e5c
+        uses: actions/upload-artifact@v2.3.1
         with:
           name: prompted-build
           path: build/
